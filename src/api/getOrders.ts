@@ -2,7 +2,7 @@ import { Orders } from "../types/orders.type";
 
 export const getOrders = async (): Promise<Orders[]> => {
   try {
-    const response = await fetch(`public/data/data.json`); // Adjust path if needed
+    const response = await fetch(`data/orders.json`); // Adjust path if needed
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
