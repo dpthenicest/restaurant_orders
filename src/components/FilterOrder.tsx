@@ -1,12 +1,12 @@
 import { Orders } from "../types/orders.type";
 import { useState, useEffect } from "react";
 
-interface Props {
+interface FilterProps {
   orders: Orders[];
   setFilteredOrders: React.Dispatch<React.SetStateAction<Orders[]>>;
 }
 
-const FilterOrder = ({ orders, setFilteredOrders }: Props) => {
+const FilterOrder = ({ orders, setFilteredOrders }: FilterProps) => {
   const [selectedStatus, setSelectedStatus] = useState<"All" | "Pending" | "Completed">("All");
 
   useEffect(() => {

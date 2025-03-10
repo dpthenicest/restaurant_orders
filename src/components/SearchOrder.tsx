@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
+import { Orders } from "../types/orders.type";
 
 interface Props {
   orders: Orders[];
@@ -42,15 +43,15 @@ const SearchOrder = ({ orders, setFilteredOrders }: Props) => {
     <div className="flex items-center space-x-2">
       <input
         type="text"
-        placeholder="Search Order..."
+        placeholder="Search Order by Customer or Items..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyPress}
-        className="w-64 p-2 rounded-lg bg-white/30 backdrop-blur-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full sm:w-64 md:w-72 p-2 rounded-lg bg-white backdrop-blur-md text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white"
       />
       <button
         onClick={handleSearch}
-        className="p-2.5 bg-gray-800 rounded-lg text-white hover:bg-gray-700 flex items-center justify-center"
+        className="p-2.5 bg-gray-800 rounded-lg text-white hover:bg-gray-300 hover:text-gray-900 flex items-center justify-center"
       >
         <IoSearchOutline className="text-xl" />
       </button>
